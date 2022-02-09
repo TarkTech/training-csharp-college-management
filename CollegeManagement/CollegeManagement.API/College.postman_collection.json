@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "2c85dee7-e169-4eaa-ab1a-b2b11ab2f470",
+		"name": "College",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetCollege",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllColleges",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCollege",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"name\": \"DIET\",\r\n        \"city\": \"Rajkot\",\r\n        \"students\": [\r\n            {\r\n                \"name\": \"darshak\",\r\n                \"enrollmentNo\": \"180180107005\",\r\n                \"mobileNo\": \"9874563210\",\r\n                \"email\": \"darshak@gamil.com\",\r\n                \"semesters\": [\r\n                    {\r\n                        \"semesterNo\": 1,\r\n                        \"startDate\": \"2021-06-01T00:00:00\",\r\n                        \"endDate\": \"2021-12-01T00:00:00\",\r\n                        \"subjects\": [\r\n                            {\r\n                                \"name\": \"EG\",\r\n                                \"obtainedMarks\": 90,\r\n                                \"totalMarks\": 100\r\n                            }\r\n                        ]\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }\r\n]"
+				},
+				"url": {
+					"raw": "http://localhost:31598/colleges",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCollege",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n    \"name\": \"DIET\",\r\n    \"city\": \"Rajkot\",\r\n    \"students\": [\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"ketan\",\r\n            \"enrollmentNo\": \"180180107005\",\r\n            \"mobileNo\": \"9874563210\",\r\n            \"email\": \"darshak@gamil.com\",\r\n            \"collegeId\": 2,\r\n            \"semesters\": [\r\n                {\r\n                    \"id\": 2,\r\n                    \"semesterNo\": 1,\r\n                    \"startDate\": \"2021-06-01T00:00:00\",\r\n                    \"endDate\": \"2021-12-01T00:00:00\",\r\n                    \"studentId\": 2,\r\n                    \"subjects\": [\r\n                        {\r\n                            \"id\": 2,\r\n                            \"name\": \"EG\",\r\n                            \"obtainedMarks\": 90,\r\n                            \"totalMarks\": 100\r\n                        }\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:31598/colleges/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCollege",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:31598/colleges/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSemester",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:31598/colleges/2/students/1/semesters/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"2",
+						"students",
+						"1",
+						"semesters",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllSemesters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:31598/colleges/2/students/1/semesters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"2",
+						"students",
+						"1",
+						"semesters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateSemester",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"semesterNo\": 2,\r\n        \"startDate\": \"2021-06-01T00:00:00\",\r\n        \"endDate\": \"2021-12-01T00:00:00\",\r\n        \"studentId\":1,\r\n        \"subjects\": [\r\n            {\r\n                \"name\": \"maths\",\r\n                \"obtainedMarks\": 90,\r\n                \"totalMarks\": 100\r\n            }\r\n        ]\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:31598/colleges/2/students/1/semesters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"2",
+						"students",
+						"1",
+						"semesters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateSemester",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"semesterNo\": 2,\r\n        \"startDate\": \"2022-06-01T00:00:00\",\r\n        \"endDate\": \"2022-12-01T00:00:00\",\r\n        \"studentId\": 1,\r\n        \"subjects\": [\r\n            {\r\n                \"id\": 3,\r\n                \"name\": \"maths\",\r\n                \"obtainedMarks\": 90,\r\n                \"totalMarks\": 100\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:31598/colleges/2/students/1/semesters/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"2",
+						"students",
+						"1",
+						"semesters",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteSemester",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:31598/colleges/2/students/1/semesters/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"2",
+						"students",
+						"1",
+						"semesters",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetStudent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:31598/colleges/2/students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"2",
+						"students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllStudent",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:31598/colleges/1/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"1",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateStudent",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"kwtean\",\r\n        \"enrollmentNo\": \"180180107005\",\r\n        \"mobileNo\": \"9874563210\",\r\n        \"email\": \"darshak@gamil.com\",\r\n        \"collegeId\": 1,\r\n        \"semesters\": [\r\n            {\r\n                \"semesterNo\": 3,\r\n                \"startDate\": \"2021-06-01T00:00:00\",\r\n                \"endDate\": \"2021-12-01T00:00:00\",\r\n                \"subjects\": [\r\n                    {\r\n                        \"name\": \"MATHS\",\r\n                        \"obtainedMarks\": 90,\r\n                        \"totalMarks\": 100\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:31598/colleges/1/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"1",
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateStudent",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"ketan\",\r\n        \"enrollmentNo\": \"180180107005\",\r\n        \"mobileNo\": \"9874563210\",\r\n        \"email\": \"darshak@gamil.com\",\r\n        \"collegeId\": 1,\r\n        \"semesters\": [\r\n            {\r\n                \"semesterNo\": 3,\r\n                \"startDate\": \"2021-06-01T00:00:00\",\r\n                \"endDate\": \"2021-12-01T00:00:00\",\r\n                \"subjects\": [\r\n                    {\r\n                        \"name\": \"MATHS\",\r\n                        \"obtainedMarks\": 90,\r\n                        \"totalMarks\": 100\r\n                    }\r\n                ]\r\n            }\r\n        ]\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:31598/colleges/1/students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"1",
+						"students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteStudent",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:31598/colleges/1/students/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"1",
+						"students",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSubject",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:31598/colleges/1/students/3/semesters/8/subjects/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"1",
+						"students",
+						"3",
+						"semesters",
+						"8",
+						"subjects",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllSubjects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "CreateSubject",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"EG\",\r\n        \"obtainedMarks\": 90,\r\n        \"totalMarks\": 100\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:31598/colleges/1/students/3/semesters/8/subjects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"1",
+						"students",
+						"3",
+						"semesters",
+						"8",
+						"subjects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateSubject",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"mathematics\",\r\n        \"obtainedMarks\": 90,\r\n        \"totalMarks\": 100\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:31598/colleges/1/students/3/semesters/8/subjects/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"1",
+						"students",
+						"3",
+						"semesters",
+						"8",
+						"subjects",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteSubject",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:31598/colleges/1/students/3/semesters/8/subjects/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "31598",
+					"path": [
+						"colleges",
+						"1",
+						"students",
+						"3",
+						"semesters",
+						"8",
+						"subjects",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
